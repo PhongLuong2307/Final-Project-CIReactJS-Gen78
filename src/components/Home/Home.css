@@ -1,0 +1,144 @@
+/* Home Header */
+
+.carousel {
+  position: relative;
+  /* border: 1px solid red; */
+}
+
+.sliderText-container {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  padding-left: 50px;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sliderText-content {
+  width: 1350px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.slider-title {
+  font-size: 80px;
+  color: white;
+  line-height: 1;
+  text-shadow: 0px 1px 0px rgb(0 0 0 / 50%);
+}
+
+.slide-subtitle {
+  margin-top: 15px;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
+  text-shadow: 0px 1px 0px rgb(0 0 0 / 50%);
+}
+
+.homebox-container {
+  width: 100%;
+  height: auto;
+  /* border: 1px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 50px;
+  position: absolute;
+  bottom: 0;
+}
+
+.homebox-content {
+  height: 260px;
+  width: 1300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid black; */
+  box-sizing: border-box;
+  z-index: 2;
+}
+
+.home_box {
+  flex: 1;
+  min-height: 260px;
+  height: 100%;
+  padding: 20px 30px;
+  box-sizing: border-box;
+  z-index: 2;
+  /* border: 1px solid black; */
+}
+
+.homeBox-title {
+  color: #fff;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  font-size: 25px;
+  max-height: 30px;
+  width: max-content;
+}
+
+.homeBox-p {
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.homeBox-btn {
+  padding: 10px 15px;
+  border: 1px solid #fff;
+  color: #fff;
+  transition: all 0.2s ease;
+}
+
+.homeBox-btn:hover {
+  background-color: #fff;
+  color: #0384ce;
+}
+
+.light-blue {
+  background-color: #42b3e5;
+}
+
+.blue {
+  background-color: #0384ce;
+}
+
+.dark-blue {
+  background-color: #3156a3;
+}
+
+.openTime-container {
+  color: #fff;
+  list-style: none;
+  padding: 0;
+}
+
+.openTime-item {
+  border-bottom: 1px solid #E0E0E0;
+  padding-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.openTime-item+.openTime-item {
+  margin-top: 15px;
+}
+
+/* End Home Header */
+
+@media screen and (max-width: 1300px) {
+  .sliderText-container {
+    top: 30px;
+  }
+
+  .slider-title {
+    font-size: 40px;
+  }
+
+  .slide-subtitle {
+    font-size: 25px;
+  }
+}
