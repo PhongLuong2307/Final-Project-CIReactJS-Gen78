@@ -125,7 +125,107 @@ body {
 
 .sideBar-container {
   /* border: 1px solid black; */
+  height: fit-content;
   flex: 1;
+  max-width: 325px;
+}
+
+.sideBar-department {
+  margin-bottom: 30px;
+}
+
+.accordionItem-content {
+  display: flex;
+}
+
+.accordion-img {
+  max-height: 80px;
+}
+
+.accordion-des {
+  font-size: 13px;
+  margin-left: 15px;
+  color: #666;
+}
+
+.accordion-btns {
+  margin-top: 20px;
+  height: max-content;
+  transform: translateX(50%);
+}
+
+.accordion-btns>button {
+  border: none;
+  background-color: #3156a3;
+  color: #fff;
+  padding: 5px 7px;
+  font-size: 13px;
+  margin-right: 2px;
+  transition: all ease 0.2s;
+}
+
+.accordion-btns>button:hover {
+  background-color: #42b3e5;
+}
+
+.sideBar-appoinment>p {
+  font-size: 13px;
+  color: #666;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #D5D5D5;
+}
+
+.sideBar-contact {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sideBar-contact>li {
+  padding: 10px 0px;
+  border-bottom: 1px solid #D5D5D5;
+  display: flex;
+  align-items: center;
+}
+
+.sideBar-contactIcon {
+  background-color: #ccc;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+.sideBar-contactIcon:hover {
+  background-color: #42b3e5;
+}
+
+.sideBar-contact_email {
+  color:  #3156a3;
+  cursor: pointer;
+}
+
+.sideBar-contact_email:hover {
+  text-decoration: underline;
+}
+
+.sideBar-contact_form {
+  color:  #3156a3;
+}
+
+.sideBar-contact_form:hover {
+  text-decoration: underline;
+}
+
+.sideBar-contact>li>p {
+  font-size: 13px;
+  margin: 0;
+  padding: 0;
+  margin-left: 10px;
 }
 
 /* End SideBar */
@@ -238,9 +338,19 @@ footer {
   font-size: 14px;
 }
 
+.footerTweet-container>li {
+  font-size: 13px;
+}
+
 .copyRight-container {
   padding: 10px 0px;
   font-size: 13px;
+}
+
+@media screen and (max-width: 1300px) {
+  .accordion-btns {
+    transform: none;
+  }
 }
 
 @media screen and (max-width: 1130px) {
@@ -356,8 +466,15 @@ footer {
     display: block;
   }
 
+  /* Side Bar */
+  .sideBar-container {
+    flex: 1;
+    max-width: fit-content;
+  }
+  /* End Side Bar */
+
   footer {
-    padding: 0px 50px;
+    padding: 0px 10px;
   }
 
   .footer-content {
@@ -433,6 +550,6 @@ footer {
   }
 
   footer {
-    padding: 0px 30px;
+    padding: 0px 10px;
   }
 }
