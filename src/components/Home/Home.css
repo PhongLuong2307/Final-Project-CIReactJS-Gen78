@@ -1,8 +1,13 @@
 /* Home Header */
 
+.site-container {
+  background-color: #F8F8F8;
+}
+
 .carousel {
   position: relative;
   /* border: 1px solid red; */
+  /* background-color: #F8F8F8; */
 }
 
 .sliderText-container {
@@ -17,15 +22,25 @@
 }
 
 .sliderText-content {
-  width: 1350px;
+  width: 1050px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  animation: opacity ease-in 1s;
+}
+
+@keyframes opacity {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
 }
 
 .slider-title {
-  font-size: 80px;
+  font-size: 70px;
   color: white;
   line-height: 1;
   text-shadow: 0px 1px 0px rgb(0 0 0 / 50%);
@@ -46,14 +61,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0px 50px;
+  padding: 0px;
   position: absolute;
   bottom: 0;
 }
 
 .homebox-content {
-  height: 260px;
-  width: 1300px;
+  height: 240px;
+  width: 1000px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,19 +79,30 @@
 
 .home_box {
   flex: 1;
-  min-height: 260px;
   height: 100%;
   padding: 20px 30px;
   box-sizing: border-box;
   z-index: 2;
+  animation: growth ease-in 1s;
   /* border: 1px solid black; */
+}
+
+@keyframes growth {
+  from {
+      flex: 0;
+      opacity: 0;
+  }
+  to {
+      flex: 1;
+      opacity: 1;
+  }
 }
 
 .homeBox-title {
   color: #fff;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   letter-spacing: 1px;
-  font-size: 25px;
+  font-size: 22px;
   max-height: 30px;
   width: max-content;
 }
@@ -84,12 +110,14 @@
 .homeBox-p {
   color: #fff;
   margin-bottom: 20px;
+  font-size: 14px;
 }
 
 .homeBox-btn {
-  padding: 10px 15px;
+  padding: 5px 10px;
   border: 1px solid #fff;
   color: #fff;
+  font-size: 14px;
   transition: all 0.2s ease;
 }
 
@@ -121,6 +149,7 @@
   padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
+  font-size: 14px;
 }
 
 .openTime-item+.openTime-item {
@@ -129,10 +158,159 @@
 
 /* End Home Header */
 
+/* Home Body */
+
+.homeBody-container {
+  width: 100%;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #F8F8F8; */
+}
+
+.homeBody-content {
+  width: 1000px;
+}
+
+.featureItems-container {
+  display: grid;
+  grid-template-columns: 310px 310px 310px;
+  gap: 25px;
+  margin-top: 20px;
+}
+
+.feature-item {
+  display: flex;
+}
+
+.feature-link {
+  text-decoration: none;
+  color: black;
+}
+
+.feature-link:hover {
+  text-decoration: underline;
+  color: black;
+}
+
+.feature-titlte {
+  font-size: 18px;
+}
+
+.featute-text {
+  font-size: 14px;
+  color: #666;
+}
+
+.featureImg-container {
+  margin-right: 30px;
+}
+
+.announcement-container {
+  margin-top: 40px;
+  background-color: #f0f0f0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 30px;
+}
+
+.announcement-text>p {
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.announcement-btn {
+  background-color: #3156a3;
+  color: #fff;
+  font-size: 14px;
+  padding: 10px 15px;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.announcement-btn:hover {
+  background-color: #42b3e5;
+}
+
+.homeMainContent-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+}
+
+.homeNews-container {
+  /* border: 1px solid black; */
+  margin-right: 30px;
+  flex: 2;
+}
+
+.upload-date {
+  background-color: #3156a3;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+}
+
+.comments-number {
+  background-color: #42b3e5;
+  color: #fff;
+  font-size: 13px;
+  padding: 5px 10px;
+  margin-top: 2px;
+}
+
+.postItem-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.postContent-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 520px;
+  border-bottom: 1px solid rgb(214, 214, 214);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.postItem-title {
+  font-size: 22px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  font-size: 14px;
+  color: #666;
+}
+
+.postItem-btn {
+  color: #0384ce;
+}
+
+.postItem-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
+  margin-top: 20px;
+  color: rgb(147, 147, 147);
+}
+
+.textDecor {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.textDecor:hover {
+  color: #0384ce;
+}
+
 @media screen and (max-width: 1300px) {
-  .sliderText-container {
-    top: 30px;
-  }
 
   .slider-title {
     font-size: 40px;
@@ -140,5 +318,138 @@
 
   .slide-subtitle {
     font-size: 25px;
+  }
+
+  .homebox-content {
+    width: 900px;
+    height: 200px;
+  }
+
+  .home_box {
+    padding: 15px;
+  }
+
+  .homeBox-title {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .homeBox-p {
+    font-size: 14px;
+  }
+
+  .homeBox-btn {
+    font-size: 13px;
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 15px;
+  }
+
+  .openTime-item {
+    font-size: 13px;
+  }
+
+  .sliderText-container {
+    top: 50px;
+  }
+
+  .slider-title {
+    font-size: 30px;
+  }
+
+  .slide-subtitle {
+    font-size: 25px;
+    line-height: 0.5;
+  }
+}
+
+@media screen and (max-width: 840px) {
+  .sliderText-container {
+    top: 60px;
+  }
+
+  .slider-title {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .slide-subtitle {
+    font-size: 17px;
+    padding: 0;
+    margin-bottom: 0px;
+  }
+
+  .homebox-container {
+    bottom: -180px;
+  }
+
+  .homebox-content {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+  }
+
+  .home_box {
+    width: 100%;
+    padding: 15px;
+  }
+
+  .homeBox-title {
+    font-size: 13px;
+  }
+
+  .homeBox-p {
+    font-size: 10px;
+  }
+
+  .homeBox-btn {
+    position: static;
+    font-size: 10px;
+    padding: 5px 10px;
+  }
+
+  .openTime-item {
+    font-size: 10px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .homebox-container {
+    padding: 0px 30px;
+    bottom: -175px;
+  }
+
+  .sliderText-container {
+    padding: 10px;
+    top: 0px;
+    left: 20px;
+  }
+
+  .slider-title {
+    font-size: 16px;
+  }
+
+  .slide-subtitle {
+    font-size: 13px;
+  }
+
+  .home_box {
+    padding: 10px;
+  }
+
+  .homeBox-title {
+    font-size: 10px;
+  }
+
+  .homeBox-p {
+    font-size: 8px;
+  }
+
+  .homeBox-btn {
+    font-size: 8px;
+  }
+
+  .openTime-item {
+    font-size: 8px;
   }
 }

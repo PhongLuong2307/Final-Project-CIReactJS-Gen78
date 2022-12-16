@@ -5,7 +5,7 @@
 
 body {
   /* height: 2000px; */
-  padding-top: 120px;
+  padding-top: 100px;
 }
 
 .line {
@@ -34,7 +34,7 @@ body {
 }
 
 .headerLogo-container {
-  width: 12%;
+  width: 15%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -74,7 +74,7 @@ body {
   /* color: #42b3e5; */
   color: #666;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 14px;
   letter-spacing: 1px;
   transition: all 0.2s ease;
   width: max-content;
@@ -94,8 +94,8 @@ body {
 }
 
 .navIcon-container {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: 1px solid #42b3e5;
   display: flex;
   justify-content: center;
@@ -108,7 +108,7 @@ body {
 
 .nav-icon {
   color: #42b3e5;
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .navIcon-container:hover {
@@ -121,7 +121,14 @@ body {
 
 /* End Navigation */
 
+/* SideBar */
 
+.sideBar-container {
+  /* border: 1px solid black; */
+  flex: 1;
+}
+
+/* End SideBar */
 
 /* Footer */
 
@@ -136,7 +143,7 @@ footer {
 }
 
 .footer-content {
-  width: 1300px;
+  width: 1000px;
 }
 
 .footerBannerBox-container {
@@ -148,13 +155,16 @@ footer {
 .footerBannerBox {
   flex: 1;
   height: 100%;
-  padding: 30px 40px;
+  padding: 20px;
   box-sizing: border-box;
 }
 
 .footerBannerBox>p {
   color: #fff;
   cursor: pointer;
+  font-size: 14px;
+  padding: 0;
+  margin-bottom: 0;
 }
 
 .footerBannerBox>p:hover {
@@ -163,14 +173,14 @@ footer {
 
 .footerBannerBox-title {
   color: #fff;
-  font-size: 24px;
+  font-size: 22px;
 }
 
 .footerBox-container {
   display: flex;
   justify-content: space-between;
   margin-top: 25px;
-  padding-bottom: 110px;
+  padding-bottom: 50px;
   border-bottom: 1px solid #666;
 }
 
@@ -210,24 +220,34 @@ footer {
   color: #42b3e5;
 }
 
+.footerBox>p {
+  font-size: 13px;
+}
+
 .footerPost-title {
   color: #D5D5D5;
   margin-bottom: 10px;
+  font-size: 13px;
 }
 
 .footerPost-title:hover {
   text-decoration: underline;
 }
 
+.footerTweet-title {
+  font-size: 14px;
+}
+
 .copyRight-container {
   padding: 10px 0px;
+  font-size: 13px;
 }
 
 @media screen and (max-width: 1130px) {
   body {
-    padding-top: 80px;
+    padding-top: 90px;
   }
-
+  
   .footerBox-container {
     padding-bottom: 50px;
   }
@@ -258,6 +278,7 @@ footer {
 
   .navContainer {
     padding: 0px 5px;
+    height: 11vh;
   }
 
   .headerLogo-container {
@@ -333,5 +354,85 @@ footer {
 
   .toggle-diplay {
     display: block;
+  }
+
+  footer {
+    padding: 0px 50px;
+  }
+
+  .footer-content {
+    width: 500px;
+    
+  }
+
+  .footerBannerBox-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerBannerBox {
+    width: 100%;
+  }
+
+  .footerBox-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .footerBox {
+    margin-bottom: 20px;
+  }
+
+  .footerBox-title {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    padding-top: 70px;
+  }
+
+  .menu-container {
+    margin-left: -10px;
+  }
+
+  .navContainer {
+    padding: 0px 30px;
+    height: 9vh;
+  }
+
+  .headerLogo-img {
+    width: 30px;
+  }
+
+  .headerLogo-brand {
+    font-size: 18px;
+  }
+
+  .menu-item {
+    font-size: 12px;
+  }
+
+  .fa-bars {
+    right: 100px;
+    font-size: 13px;
+  }
+
+  .account-container {
+    margin-right: 10px;
+  }
+
+  .navIcon-container {
+    width: 25px;
+    height: 25px;
+  }
+
+  .nav-icon {
+    font-size: 13px;
+  }
+
+  footer {
+    padding: 0px 30px;
   }
 }

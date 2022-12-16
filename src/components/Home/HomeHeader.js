@@ -18,7 +18,7 @@ const HomeHeader = () => {
                                 <h1 className="slider-title">schedule</h1>
                                 <h2 className="slide-subtitle">Organize and visualize your week</h2>
                                 <h2 className="slide-subtitle"> with build-in timetable</h2>
-                            </div>r
+                            </div>
                         </div>
                     </div>
                     <div>

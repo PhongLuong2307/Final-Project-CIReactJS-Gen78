@@ -1,22 +1,16 @@
 import React from "react";
 import '../components/Home/Home.css'
 import HomeHeader from "../components/Home/HomeHeader";
+import HomeBody from "../components/Home/HomeBody";
 
 const Home = () => {
-    return(
+    return (
         <React.Fragment>
-            <HomeHeader />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
+            <div className="site-container">
+                <HomeHeader />
+                {/* <div style={{height: '500px'}}></div> */}
+                <HomeBody />
+            </div>
         </React.Fragment>
     )
 }

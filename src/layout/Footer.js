@@ -1,9 +1,9 @@
 import React from "react";
-import { Container } from "reactstrap";
+// import { Container } from "reactstrap";
 import { Link } from "react-router-dom";
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { fab } from '@fortawesome/free-solid-svg-icons'
+// import { library } from '@fortawesome/fontawesome-svg-core'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { fab } from '@fortawesome/free-solid-svg-icons'
 
 const Footer = () => {
     return (
