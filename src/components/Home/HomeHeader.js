@@ -9,7 +9,7 @@ const HomeHeader = () => {
             {/* Home Carousel */}
 
             <div className="carousel">
-                <Carousel autoPlay>
+                <Carousel autoPlay showThumbs={false}>
                     <div>
                         <img src="assets/img/img1.jpg" alt="" />
                         <div className="sliderText-container">

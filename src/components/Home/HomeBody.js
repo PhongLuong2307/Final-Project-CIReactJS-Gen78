@@ -2,6 +2,7 @@ import React from 'react';
 import FeatureItem from './FeatureItem';
 import HomeNews from './HomeNews';
 import SideBar from '../../layout/SideBar';
+import useGetBlogs from '../../hooks/useGetBlogs';
 
 const HomeBody = () => {
   const featureImgSrc = [
@@ -12,6 +13,11 @@ const HomeBody = () => {
     { src: 'assets/img/feature_wheelchair.png' },
     { src: 'assets/img/feature_questionmark.png' },
   ]
+
+  const blogList = useGetBlogs();
+
+  const homeNewsBlogs = blogList.splice(0, 1);
+
   return (
     <React.Fragment>
       <div className='homeBody-container'>
@@ -41,7 +47,9 @@ const HomeBody = () => {
 
           {/* Home Main Layout */}
           <div className='homeMainContent-container'>
-            <HomeNews />
+            <HomeNews
+              homeNewsBlogs={homeNewsBlogs}
+            />
             <SideBar />
           </div>
         </div>

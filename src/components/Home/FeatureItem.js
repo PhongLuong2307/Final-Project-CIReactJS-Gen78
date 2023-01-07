@@ -8,14 +8,14 @@ const FeatureItem = (props) => {
             <div className='feature-item'>
                 <div className='featureImg-container'>
                     <Link className='feature-link'>
-                        <img src={props.featureImgSrc} alt='img' />
+                        <img className='feature-icon' src={props.featureImgSrc} alt='img' />
                     </Link>
                 </div>
                 <div className='featureText-container'>
                     <Link className='feature-link'>
                         <h5 className='feature-titlte'>Lorem Ipsum</h5>
                     </Link>
-                    <p className='featute-text'>
+                    <p className='feature-text'>
                         Donec ipsum diam, pretium no mollis dapibus risus.
                         Nullam dolor nibh retro pulvinar at interdum eget,
                         suscipit id felis tincidunt risus.
