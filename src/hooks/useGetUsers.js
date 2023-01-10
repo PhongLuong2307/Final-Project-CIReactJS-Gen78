@@ -17,7 +17,7 @@ const useGetUsers = () => {
         }
 
         handleFetchUsers();
-    }, [])
+    }, 5)
 
     return users;
 

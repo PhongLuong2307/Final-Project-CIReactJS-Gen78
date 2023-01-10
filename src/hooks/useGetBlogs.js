@@ -17,7 +17,7 @@ const useGetBlogs = () => {
         }
 
         handleFetchBlogs();
-    }, [])
+    })
 
     return blogs;
 

@@ -16,7 +16,7 @@ const HomeBody = () => {
 
   const blogList = useGetBlogs();
 
-  const homeNewsBlogs = blogList.splice(0, 1);
+  const homeNewsBlogs = blogList.splice(0, 2);
 
   return (
     <React.Fragment>

@@ -1,9 +1,9 @@
-.blogManager-container {
+.manager-container {
     margin-top: 10px;
     margin-bottom: 30px;
 }
 
-.blogManager-title {
+.manager-title {
     background-color: #42b3e5;
     color: #fff;
     padding: 15px;
@@ -12,7 +12,7 @@
     box-sizing: border-box;
 }
 
-.addBlog-container {
+.addForm-container {
     /* display: flex; */
     flex-direction: column;
     justify-content: center;
@@ -22,11 +22,6 @@
 
 .toggle-display {
     display: flex !important;
-}
-
-@keyframes display {
-    from {display: none;}
-    to {display: flex;}
 }
 
 .addBlog-title {
@@ -39,6 +34,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 1000px;
     /* border: 1px solid black; */
 }
 
@@ -46,13 +42,14 @@
     background-color: #0384ce;
     color: #fff;
     font-size: 18px;
+    min-width: 180px;
     display: flex;
     align-items: center;
     padding: 5px 10px;
     border: none;
     transition: all ease 0.2s;
-    margin-left: 10px;
-    margin-top: 10px;
+    margin-left: 30px;
+    margin-top: 30px;
 }
 
 .toggle-btn:hover {
@@ -66,7 +63,8 @@
     font-weight: 900;
 }
 
-textarea {
+textarea,
+input {
     border: none;
     border-bottom: 1px solid #42b3e5;
 }
@@ -93,7 +91,7 @@ label {
     width: 1000px;
 }
 
-.input-container + .input-container {
+.input-container+.input-container {
     margin-top: 20px;
 }
 
@@ -134,4 +132,71 @@ label {
 
 .updateBtn {
     background-color: #3156a3;
+}
+
+.table-responsive {
+    margin-top: 30px;
+    padding: 0px 30px;
+}
+
+.table {
+    border: 1px solid;
+}
+
+.blogID-th {
+    width: 8%;
+    text-align: center;
+}
+
+.blogAuthor-th {
+    width: 11%;
+    /* border: 1px solid red; */
+}
+
+.blogTitle-th {
+    width: 40%;
+}
+
+.blogCreated-th {
+    width: 20%;
+}
+
+.actions {
+    width: 11%;
+    text-align: center;
+    /* border: 1px solid red; */
+}
+
+.blogID-td {
+    text-align: center;
+}
+
+.actions-btns-container {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.actionBtn {
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    font-size: 14px;
+    /* border-radius: 3px; */
+}
+
+.deleteBtn {
+    background-color: red;
+    transition: all ease 0.2s;
+}
+
+.deleteBtn:hover {
+    background-color: rgb(255, 149, 0);
+}
+
+.updateBtn {
+    transition: all ease 0.2s;
+}
+
+.updateBtn:hover {
+    background-color: #42b3e5;
 }

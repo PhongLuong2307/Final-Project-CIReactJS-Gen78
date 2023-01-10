@@ -1,8 +1,25 @@
-import React, { useState } from 'react';
-import useGetBlogs from '../../hooks/useGetBlogs';
-import { Container } from 'reactstrap';
+import React, { useState, useEffect } from 'react';
+// import useGetBlogs from '../../hooks/useGetBlogs';
 
 const BlogsManager = () => {
+
+    const [allBlogs, setAllBlogs] = useState([]);
+
+    useEffect(() => {
+        const handleFetchAllBlogs = () => {
+            fetch(
+                `https://634ea79bf34e1ed82692804b.mockapi.io/api/v1/medicenter-blogs`
+            )
+                .then((response) => {
+                    return response.json();
+                })
+                .then((data) => {
+                    setAllBlogs(data);
+                });
+        };
+
+        handleFetchAllBlogs();
+    }, [allBlogs]);
 
     const [title, setTitle] = useState('');
     const [heading1, setHeading1] = useState('');
@@ -18,6 +35,8 @@ const BlogsManager = () => {
     const [heading6, setHeading6] = useState('');
     const [paragraph6, setParagraph6] = useState('');
     const [selectedFile, setSelectedFile] = useState();
+
+    const [id, setID] = useState(0);
 
     const handleSetTitle = (event) => {
         setTitle(event.target.value);
@@ -74,7 +93,6 @@ const BlogsManager = () => {
 
     const handleChangeFile = (event) => {
         setSelectedFile(event.target.files[0]);
-        console.log(event.target.files[0]);
     }
 
     const handlePostBlog = () => {
@@ -88,10 +106,12 @@ const BlogsManager = () => {
             imgSrc = '';
         }
 
+        const postedUser = localStorage.getItem('username');
+
         const newBlog = {
             createdAt: date,
             title: title,
-            imgSrc: imgSrc,
+            imgSrc: '',
             heading1: heading1,
             paragraph1: paragraph1,
             heading2: heading2,
@@ -105,8 +125,8 @@ const BlogsManager = () => {
             heading6: heading6,
             paragraph6: paragraph6,
             comments: [],
-            postedBy: "John Doe",
-            postType: "Image",
+            postedBy: postedUser,
+            postType: "Post",
         }
 
         console.log(newBlog);
@@ -122,34 +142,105 @@ const BlogsManager = () => {
             .then(function (response) {
                 return response.json();
             })
-            .then(function () {
-                alert('Upload Successfully!')
+            .then(function (data) {
+                setAllBlogs(data);
+                alert('Upload Successfully!');
+            })
+    }
+
+    const handleDeleteBlog = (id) => {
+        fetch('https://634ea79bf34e1ed82692804b.mockapi.io/api/v1/medicenter-blogs/' + id, {
+            method: 'DELETE',
+        })
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                setAllBlogs(data);
+                alert("Delete successfully!");
+            });
+    }
+
+    const onUpdateBlog = (id) => {
+        fetch(
+            'https://634ea79bf34e1ed82692804b.mockapi.io/api/v1/medicenter-blogs/' + id,
+        )
+            .then((response) => {
+                return response.json();
+            })
+            .then((blog) => {
+                setTitle(blog.title);
+                setHeading1(blog.heading1);
+                setParagraph1(blog.paragraph1);
+                setHeading2(blog.heading2);
+                setParagraph2(blog.paragraph2);
+                setHeading3(blog.heading3);
+                setParagraph3(blog.paragraph3);
+                setHeading4(blog.heading4);
+                setParagraph4(blog.paragraph4);
+                setHeading5(blog.heading5);
+                setParagraph5(blog.paragraph5);
+                setHeading6(blog.heading6);
+                setParagraph6(blog.paragraph6);
+                setID(blog.id);
+            });
+
+        const addBlogContainer = document.getElementById('addBlog-form');
+        addBlogContainer.classList.add("toggle-display");
+
+        console.log(id);
+    }
+
+    const handleUpdateBlog = (id) => {
+        const updatedBlog = {
+            title: title,
+            heading1: heading1,
+            paragraph1: paragraph1,
+            heading2: heading2,
+            paragraph2: paragraph2,
+            heading3: heading3,
+            paragraph3: paragraph3,
+            heading4: heading4,
+            paragraph4: paragraph4,
+            heading5: heading5,
+            paragraph5: paragraph5,
+            heading6: heading6,
+            paragraph6: paragraph6,
+        }
+
+        fetch('https://634ea79bf34e1ed82692804b.mockapi.io/api/v1/medicenter-blogs/' + id, {
+            method: 'PUT',
+            body: JSON.stringify(updatedBlog),
+            headers: {
+                'Content-Type': 'application/json'
+            },
+
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                alert('PUT successfully!');
             })
     }
 
     const toggleForm = () => {
-        const addBlogContainer = document.getElementById('addBlog-container');
+        const addBlogContainer = document.getElementById('addBlog-form');
         addBlogContainer.classList.toggle("toggle-display");
     }
 
-    const blogs = useGetBlogs();
-
-    // console.log(blogs);
-
     return (
         <React.Fragment>
-            <div className='blogManager-container'>
-                <h4 className='blogManager-title'>Blogs Manager</h4>
+            <div className='manager-container'>
+                <h4 className='manager-title'>Blogs Manager</h4>
                 <button
                     onClick={toggleForm}
                     className='toggle-btn'
                 >
                     <span className='plus'>+</span> Upload New Blog
                 </button>
-                <div className='addBlog-container' id='addBlog-container'>
+                <div className='addForm-container' id='addBlog-form'>
                     <h2 className='addBlog-title'>Upload Blogs</h2>
                     <div className='addBlog--form__container'>
-                        <div className='addBlog-form'>
+                        <div>
                             <div className='input-container'>
                                 <textarea
                                     className='textarea'
@@ -157,7 +248,7 @@ const BlogsManager = () => {
                                     value={title}
                                     onChange={handleSetTitle}
                                 />
-                                <label htmlFor='title'>Title :</label>
+                                <label htmlFor='title'>Title </label>
                             </div>
 
                             <div className='input-container'>
@@ -167,7 +258,7 @@ const BlogsManager = () => {
                                     value={heading1}
                                     onChange={handleSetHeading1}
                                 />
-                                <label className="heading-label" htmlFor='heading1'>Heading 1 :</label>
+                                <label className="heading-label" htmlFor='heading1'>Heading 1 </label>
                             </div>
 
                             <div className='input-container'>
@@ -177,7 +268,7 @@ const BlogsManager = () => {
                                     value={paragraph1}
                                     onChange={handleSetParagraph1}
                                 />
-                                <label htmlFor="paragraph1">Paragraph 1 :</label>
+                                <label htmlFor="paragraph1">Paragraph 1 </label>
                             </div>
 
                             <div className='input-container'>
@@ -187,7 +278,7 @@ const BlogsManager = () => {
                                     value={heading2}
                                     onChange={handleSetHeading2}
                                 />
-                                <label className="heading-label" htmlFor='heading2'>Heading 2 :</label>
+                                <label className="heading-label" htmlFor='heading2'>Heading 2 </label>
                             </div>
 
                             <div className='input-container'>
@@ -197,7 +288,7 @@ const BlogsManager = () => {
                                     value={paragraph2}
                                     onChange={handleSetParagraph2}
                                 />
-                                <label htmlFor="paragraph2">Paragraph 2 :</label>
+                                <label htmlFor="paragraph2">Paragraph 2 </label>
                             </div>
 
                             <div className='input-container'>
@@ -207,7 +298,7 @@ const BlogsManager = () => {
                                     value={heading3}
                                     onChange={handleSetHeading3}
                                 />
-                                <label className="heading-label" htmlFor='heading3'>Heading 3 :</label>
+                                <label className="heading-label" htmlFor='heading3'>Heading 3 </label>
                             </div>
 
                             <div className='input-container'>
@@ -217,7 +308,7 @@ const BlogsManager = () => {
                                     value={paragraph3}
                                     onChange={handleSetParagraph3}
                                 />
-                                <label htmlFor="paragraph3">Paragraph 3 :</label>
+                                <label htmlFor="paragraph3">Paragraph 3 </label>
                             </div>
 
                             <div className='input-container'>
@@ -227,7 +318,7 @@ const BlogsManager = () => {
                                     value={heading4}
                                     onChange={handleSetHeading4}
                                 />
-                                <label className="heading-label" htmlFor='heading4'>Heading 4 :</label>
+                                <label className="heading-label" htmlFor='heading4'>Heading 4 </label>
                             </div>
 
                             <div className='input-container'>
@@ -237,7 +328,7 @@ const BlogsManager = () => {
                                     value={paragraph4}
                                     onChange={handleSetParagraph4}
                                 />
-                                <label htmlFor="paragraph4">Paragraph 4 :</label>
+                                <label htmlFor="paragraph4">Paragraph 4 </label>
                             </div>
 
                             <div className='input-container'>
@@ -247,7 +338,7 @@ const BlogsManager = () => {
                                     value={heading5}
                                     onChange={handleSetHeading5}
                                 />
-                                <label className="heading-label" htmlFor='heading5'>Heading 5 :</label>
+                                <label className="heading-label" htmlFor='heading5'>Heading 5 </label>
                             </div>
 
                             <div className='input-container'>
@@ -257,7 +348,7 @@ const BlogsManager = () => {
                                     value={paragraph5}
                                     onChange={handleSetParagraph5}
                                 />
-                                <label htmlFor="paragraph5">Paragraph 5 :</label>
+                                <label htmlFor="paragraph5">Paragraph 5 </label>
                             </div>
 
                             <div className='input-container'>
@@ -267,7 +358,7 @@ const BlogsManager = () => {
                                     value={heading6}
                                     onChange={handleSetHeading6}
                                 />
-                                <label className="heading-label" htmlFor='heading6'>Heading 6 :</label>
+                                <label className="heading-label" htmlFor='heading6'>Heading 6 </label>
                             </div>
 
                             <div className='input-container'>
@@ -277,7 +368,7 @@ const BlogsManager = () => {
                                     value={paragraph6}
                                     onChange={handleSetParagraph6}
                                 />
-                                <label htmlFor="paragraph6">Paragraph 6 :</label>
+                                <label htmlFor="paragraph6">Paragraph 6 </label>
                             </div>
 
                             <div className='input-container'>
@@ -288,7 +379,7 @@ const BlogsManager = () => {
                                     id='uploadFile'
                                     onChange={handleChangeFile}
                                 />
-                                <label htmlFor='uploadFile'>Image :</label>
+                                <label htmlFor='uploadFile'>Image </label>
                             </div>
 
                             <div className="form-btns-container">
@@ -296,10 +387,53 @@ const BlogsManager = () => {
                                     <input onClick={handlePostBlog} className='formBtn' value='Upload' type='button' />
                                 </div>
                                 <div className='updateBtn-container'>
-                                    <input className='updateBtn formBtn' value='Update' type='button' />
+                                    <input onClick={() => {handleUpdateBlog(id)}} className='updateBtn formBtn' value='Update' type='button' />
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+
+
+                <div className='manage-blogsList'>
+                    <div class="table-responsive">
+                        <table class="table" id="dataTable" width="100%" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th className='blogID-th'>Blog ID</th>
+                                    <th className='blogTitle-th'>Title</th>
+                                    <th className='blogCreated-th'>Created Date</th>
+                                    <th className='blogAuthor-th'>Author</th>
+                                    <th className='actions'>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {
+                                    allBlogs.length > 0 ? (
+                                        allBlogs.map((blog) => {
+                                            return (
+                                                <tr className='table-row'>
+                                                    <td className='blogID-td'>{blog.id}</td>
+                                                    <td className='blogTitle-td'>{blog.title}</td>
+                                                    <td className='blogCreated-td'>{blog.createdAt}</td>
+                                                    <td className='blogAuthor-td'>{blog.postedBy}</td>
+                                                    <td>
+                                                        <div className='actions-btns-container'>
+                                                            <button onClick={() => { onUpdateBlog(blog.id) }} className='actionBtn updateBtn'>Update</button>
+                                                            <button onClick={() => { handleDeleteBlog(blog.id) }} className='actionBtn deleteBtn'>Delete</button>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            )
+                                        })
+                                    ) : (
+                                        <h3>Loading...</h3>
+                                    )
+                                }
+
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>

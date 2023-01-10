@@ -82,7 +82,7 @@ const SideBar = () => {
                                             >
                                                 <div class="accordion-body p-0 p-2 pt-4 pb-3">
                                                     <div className='accordionItem-content'>
-                                                        <img className='accordion-img' src={`${item.imgSrc}`} alt='' />
+                                                        <img className='accordion-img' src={`../${item.imgSrc}`} alt='' />
                                                         <div className='accordion-des'>
                                                             {item.description}
                                                         </div>

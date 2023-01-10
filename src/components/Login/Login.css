@@ -41,7 +41,7 @@
 .form-container {
     z-index: 99;
     width: 450px;
-    height: 60vh;
+    height: 70vh;
     padding: 25px;
     /* border: 1px solid black; */
     background-color: rgba(256, 256, 256, 0.8);
@@ -52,7 +52,7 @@
     margin-bottom: 20px;
 }
 
-.input-container {
+.logInPage-input-container {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -134,4 +134,44 @@
 
 .signUpHere:hover {
     color: #42b3e5;
+}
+
+.backtohome {
+    margin-top: 10px;
+    color: #0384ce;
+    transition: all ease 0.2s;
+}
+
+.backtohome:hover {
+    color: #42b3e5;
+}
+
+@media screen and (max-width: 1130px) {
+    .page-container {
+        height: 100vh;
+    }
+
+    .login-container {
+        background-size: cover;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .page-container {
+        height: 100vh;
+    }
+
+    .login-container {
+        background-size:cover;
+    }
+
+    .form-container {
+        margin-top: -280px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .form-container {
+        margin-top: -30px;
+    }
 }

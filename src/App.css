@@ -86,6 +86,7 @@
 
 .account-container {
   display: flex;
+  align-items: center;
 }
 
 .navIcon-container {
@@ -113,6 +114,11 @@
 .navIcon-container:hover .nav-icon {
   color: #fff;
 }
+
+.avatar {
+  border: none;
+}
+
 
 /* End Navigation */
 
