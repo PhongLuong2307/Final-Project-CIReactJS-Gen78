@@ -5,6 +5,7 @@ import HomeBody from "../components/Home/HomeBody";
 
 
 const Home = () => {
+
     return (
         <React.Fragment>
             <div className="site-container">

@@ -161,7 +161,7 @@ const BlogsManager = () => {
             });
     }
 
-    const onUpdateBlog = (id) => {
+    const onUpdateBlog = (id) => {  
         fetch(
             'https://634ea79bf34e1ed82692804b.mockapi.io/api/v1/medicenter-blogs/' + id,
         )
@@ -218,7 +218,7 @@ const BlogsManager = () => {
         })
             .then((response) => response.json())
             .then((result) => {
-                alert('PUT successfully!');
+                alert('Update successfully!');
             })
     }
 
@@ -238,7 +238,7 @@ const BlogsManager = () => {
                     <span className='plus'>+</span> Upload New Blog
                 </button>
                 <div className='addForm-container' id='addBlog-form'>
-                    <h2 className='addBlog-title'>Upload Blogs</h2>
+                    <h2 className='addBlog-title'>Upload Blog</h2>
                     <div className='addBlog--form__container'>
                         <div>
                             <div className='input-container'>
@@ -394,11 +394,12 @@ const BlogsManager = () => {
                     </div>
                 </div>
 
+                {/* Blogs List */}
 
                 <div className='manage-blogsList'>
                     <div class="table-responsive">
                         <table class="table" id="dataTable" width="100%" cellspacing="0">
-                            <thead>
+                            <thead className='admin-thead'>
                                 <tr>
                                     <th className='blogID-th'>Blog ID</th>
                                     <th className='blogTitle-th'>Title</th>
@@ -418,7 +419,7 @@ const BlogsManager = () => {
                                                     <td className='blogTitle-td'>{blog.title}</td>
                                                     <td className='blogCreated-td'>{blog.createdAt}</td>
                                                     <td className='blogAuthor-td'>{blog.postedBy}</td>
-                                                    <td>
+                                                    <td className='actions-td'>
                                                         <div className='actions-btns-container'>
                                                             <button onClick={() => { onUpdateBlog(blog.id) }} className='actionBtn updateBtn'>Update</button>
                                                             <button onClick={() => { handleDeleteBlog(blog.id) }} className='actionBtn deleteBtn'>Delete</button>

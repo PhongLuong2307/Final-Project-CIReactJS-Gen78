@@ -4,7 +4,6 @@ import "../components/Login/Login.css"
 import useGetUsers from '../hooks/useGetUsers';
 
 const Login = () => {
-
     const [isLoginForm, setIsLoginForm] = useState(true);
 
     const [loginUsername, setLoginUsername] = useState('');
@@ -208,7 +207,7 @@ const Login = () => {
                             )
                         }
 
-                        <Link to='/' style={{textDecoration: 'none'}}>
+                        <Link to='/' style={{ textDecoration: 'none' }}>
                             <div className='backtohome'>
                                 Back To Home Page
                             </div>

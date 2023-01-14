@@ -98,3 +98,9 @@ div.disabled {
     }
 
 }
+
+@media screen and (max-width: 500px)  {
+    .searchBlogs {
+        width: 200px;
+    }
+}

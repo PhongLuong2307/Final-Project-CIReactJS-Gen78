@@ -38,19 +38,21 @@ const NavComponent = () => {
         <React.Fragment>
             <nav id="navContainer" className="navContainer">
                 <div className="headerLogo-container">
-                    <img className="headerLogo-img" src="../assets/img/header_logo.png" alt='' />
+                    <Link to='/admin'>
+                        <img className="headerLogo-img" src="../assets/img/header_logo.png" alt='' />
+                    </Link>
                     <span className="headerLogo-brand">medicenter</span>
                 </div>
 
                 <div id='headerMenu' className="menu-container">
                     <ul>
-                        <Link className='link' to='/' style={{ textDecoration: 'none' }}>
+                        <Link to='/' className='link' style={{ textDecoration: 'none' }}>
                             <li className="menu-item">HOME</li>
                         </Link>
                         <Link className='link' style={{ textDecoration: 'none' }}>
                             <li className="menu-item">APPOINMENT</li>
                         </Link>
-                        <Link className='link' style={{ textDecoration: 'none' }}>
+                        <Link to='/doctors' className='link' style={{ textDecoration: 'none' }}>
                             <li className="menu-item">OUR DOCTORS</li>
                         </Link>
                         <Link to='/timetable' className='link' style={{ textDecoration: 'none' }}>
@@ -75,13 +77,13 @@ const NavComponent = () => {
                     {
                         (
                             isLogin ? (
-                                <img 
-                                title={
-                                    `${username} 
-Click To Log Out`} 
+                                <img
+                                    title={
+                                        `${username} 
+Click To Log Out`}
                                     onClick={handleLogOut}
-                                    className='navIcon-container avatar' 
-                                    src={`${avatar}`} 
+                                    className='navIcon-container avatar'
+                                    src={`${avatar}`}
                                     alt=''
                                 />
                             ) : (

@@ -139,36 +139,67 @@ label {
     padding: 0px 30px;
 }
 
-.table {
+/* .table {
     border: 1px solid;
+} */
+
+.admin-thead>tr>th {
+    background-color: #fff;
 }
 
 .blogID-th {
     width: 8%;
     text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
 }
 
 .blogAuthor-th {
     width: 11%;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
     /* border: 1px solid red; */
 }
 
 .blogTitle-th {
     width: 40%;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
 }
 
 .blogCreated-th {
     width: 20%;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
+    text-align: left;
 }
 
 .actions {
     width: 11%;
     text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    color: black;
     /* border: 1px solid red; */
 }
 
+/* .table-row {
+    height: 40px;
+} */
+
 .blogID-td {
-    text-align: center;
+    text-align: center !important;
+    padding: 10px !important;
+}
+
+.blogID-td, .blogTitle-td, .blogCreated-td, .blogAuthor-td, .actions-td {
+    padding: 10px !important;
 }
 
 .actions-btns-container {
@@ -199,4 +230,58 @@ label {
 
 .updateBtn:hover {
     background-color: #42b3e5;
+}
+
+
+/* Doctor Manager */
+
+.input-group {
+    width: 100%;
+    /* border: 1px solid black; */
+    justify-content: space-between;
+}
+
+.input-group +.input-group {
+    margin-top: 30px;
+}
+
+.doctor-input {
+    width: 300px;
+    /* margin-left: 30px; */
+}
+
+textarea.doctor-input {
+    height: 30px;
+}
+
+.doctor-label {
+    min-width: 130px;
+}
+
+.doctor-training-container {
+    margin-top: 30px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.padding {
+    padding: 10px 9px !important;
+}
+
+.doctorName-th, .doctorDegree-th, .doctorSpeciality-th, .doctorOffice-th, .doctorWorkdays-th {
+    text-align: left;
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.doctorID-th {
+    font-size: 18px;
+    color: black;
+    font-weight: 600;
+}
+
+.doctorID-td {
+    text-align: center;
 }
