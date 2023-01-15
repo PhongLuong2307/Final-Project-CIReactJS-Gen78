@@ -72,15 +72,15 @@ const HomeHeader = () => {
                             <ul className="openTime-container">
                                 <li className="openTime-item">
                                     <span className="openDay">Monday - Friday</span>
-                                    <span className="openTime">8.00 - 17.00</span>
+                                    <span className="openTime">6.00 - 20.00</span>
                                 </li>
                                 <li className="openTime-item">
                                     <span className="openDay">Saturday</span>
-                                    <span className="openTime">9.30 - 17.30</span>
+                                    <span className="openTime">9.00 - 17.00</span>
                                 </li>
                                 <li className="openTime-item">
                                     <span className="openDay">Sunday</span>
-                                    <span className="openTime">9.30 - 15.00</span>
+                                    <span className="openTime">9.00 - 19.00</span>
                                 </li>
                             </ul>
                         </div>

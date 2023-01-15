@@ -49,8 +49,8 @@ const NavComponent = () => {
                         <Link to='/' className='link' style={{ textDecoration: 'none' }}>
                             <li className="menu-item">HOME</li>
                         </Link>
-                        <Link className='link' style={{ textDecoration: 'none' }}>
-                            <li className="menu-item">APPOINMENT</li>
+                        <Link to='/appointment' className='link' style={{ textDecoration: 'none' }}>
+                            <li className="menu-item">APPOINTMENT</li>
                         </Link>
                         <Link to='/doctors' className='link' style={{ textDecoration: 'none' }}>
                             <li className="menu-item">OUR DOCTORS</li>

@@ -1,0 +1,106 @@
+.select-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+}
+
+.select-label {
+    font-size: 16px;
+    color: #3156a3;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.fa-house-medical, .fa-suitcase, .fa-user-doctor {
+    margin-right: 5px;
+}
+
+.select-tag {
+    border: none;
+    border-bottom: 1px solid #0384ce;
+}
+
+.right-title {
+    font-size: 18px;
+}
+
+.date-title, .time-title {
+    font-size: 15px;
+    /* margin-top: 15px; */
+    font-weight: 500;
+}
+
+.time-title {
+    margin-top: 61px;
+}
+
+.chooseDay-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.chooseDay-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    border: 2px solid #fff;
+    background-color: #f7f7f7;
+    min-width: 70px;
+    /* max-height: 50px; */
+    padding: 5px;
+    margin-right: 10px;
+    border-radius: 7px;
+    /* box-sizing: border-box; */
+}
+
+.choosen {
+    border: 2px solid #0384ce;
+    background-color: #fff;
+}
+
+.chooseDay-date {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.chooseDay-text {
+    font-size: 12px;
+    color: rgb(125, 125, 125)
+}
+
+.chooseTime-container {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.select-time {
+    margin-top: 2px;
+    width: 100px;
+}
+
+@media screen and (max-width: 945px) {
+    .chooseDay-item {
+        width: 80px;
+        height: 60px;
+    }
+
+    .otherDay {
+        display: none;
+    }
+
+    .time-title {
+        margin-top: 62px;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .time-title {
+        margin-top: 20px;
+    }
+
+    
+}

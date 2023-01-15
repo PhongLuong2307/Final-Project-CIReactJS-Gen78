@@ -1,5 +1,6 @@
 .doctorSite-container {
     background-color: #F8F8F8;
+    animation: opacity 0.5s ease;
 }
 
 .doctor-container {
@@ -16,6 +17,8 @@
 .doctor-content {
     width: 1000px;
     border-top: 8px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
 }
 
 .doctor-title-container {
@@ -48,6 +51,110 @@
     text-decoration: underline;
 }
 
+/* Doctor Detail */
+
+.doctorDetail-container {
+    width: 100%;
+    /* border: 1px solid black; */
+    margin-top: 30px;
+    /* animation: opacity 1s ease; */
+    display: none;
+}
+
+@keyframes opacity {
+    from {
+        display: none;
+        opacity: 0;
+    }
+
+    to {
+        display: flex;
+        opacity: 1;
+    }
+}
+
+.doctor-detail {
+    display: flex;
+}
+
+.left-detail {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.right-detail {
+    flex: 1;
+}
+
+.detail-name {
+    font-weight: 500;
+    font-size: 17px;
+}
+
+.left-detail>img {
+    width: 100%;
+}
+
+.left-detail:hover .doctor-shortInfo {
+    background-color: #42b3e5;
+    color: #fff;
+}
+
+.left-detail:hover .doctor-shortInfo>div {
+    color: #fff;
+}
+
+.detail-info-container {
+    display: flex;
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #E0E0E0;
+    /* align-items: center; */
+    /* border: 1px solid black; */
+}
+
+.info-field {
+    width: 100px;
+    line-height: 1.4;
+    font-weight: 500;
+    padding: 0;
+    margin: 0;
+    font-size: 15px;
+    /* border: 1px solid black; */
+}
+
+.info-value {
+    line-height: 1.4;
+    color: #666;
+    font-size: 14px;
+}
+
+.timetable-btn {
+    color: #0384ce;
+    font-size: 14px;
+    margin-top: 40px;
+}
+
+.control-btns-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.control-btn {
+    font-size: 12px;
+    color: #666;
+    border: 1px solid #E0E0E0;
+    padding: 5px 10px;
+    margin-left: 2px;
+    cursor: pointer;
+}
+
+.control-btn:hover {
+    border: 1px solid #42b3e5;
+}
+
+/* End Doctor Detail */
+
 .doctor-header {
     margin-top: 30px;
 }
@@ -68,20 +175,27 @@
 
 .tab-navigaion-item:hover {
     color: black;
-    border-bottom: 2px solid #42b3e5;
+    border-bottom: 1px solid #42b3e5;
 }
 
 .selected {
     color: black;
-    border-bottom: 2px solid #42b3e5;
+    border-bottom: 1px solid #42b3e5;
 }
 
 .doctorsList-container {
     margin-top: 20px;
     display: grid;
     gap: 30px;
-    grid-template-columns: 22.76% 22.76% 22.76% 22.76%;
+    /* grid-template-columns: 22.76% 22.76% 22.76% 22.76%; */
+    grid-template-columns: 31.35% 31.35% 31.35%;
+    margin-bottom: 50px;
     /* border: 1px solid black; */
+}
+
+a {
+    text-decoration: none !important;
+    color: black !important;
 }
 
 .grid-item {
@@ -103,6 +217,11 @@
 
 .grid-item:hover .doctor-shortInfo>div {
     color: #fff;
+}
+
+.grid-item>img {
+    height: 200px;
+    width: 100%;
 }
 
 .doctor-shortInfo {
@@ -153,7 +272,7 @@
 
 @media screen and (max-width: 1130px) {
     .doctorSite-container {
-        margin-top: -60px;
+        margin-top: 30px;
     }
 
     .doctor-container {
@@ -162,6 +281,10 @@
 }
 
 @media screen and (max-width: 830px) {
+    .doctorSite-container {
+        margin-top: 0px;
+    }
+
     .doctor-header {
         flex-direction: column;
     }
@@ -169,14 +292,48 @@
     .doctor-content {
         width: 500px;
     }
+
+    .doctor-detail {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left-detail {
+        margin: 0;
+        margin-bottom: 30px;
+    }
+
+    .doctorsList-container {
+        grid-template-columns: 47% 47%;
+    }
+
+    .tab-navigaion-container {
+        flex-wrap: wrap;
+    }
+
+    .doctorsList-container {
+        grid-template-columns: 47% 47%;
+    }
 }
 
 @media screen and (max-width: 500px) {
     .doctorSite-container {
-        margin-top: -10px;
+        margin-top: 0px;
     }
 
     .doctor-container {
         padding: 0px 10px;
+    }
+
+    .doctorsList-container {
+        grid-template-columns: 100%;
+    }
+
+    .pagination {
+        margin-bottom: 50px;
+    }
+
+    .doctorsList-container {
+        grid-template-columns: 100%;
     }
 }

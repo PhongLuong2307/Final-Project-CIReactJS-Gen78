@@ -11,7 +11,7 @@ import Admin from './pages/Admin';
 import Login from './pages/Login';
 import TimeTable from './pages/TimeTable';
 import Doctors from './pages/Doctors';
-import DoctorDetail from './components/Doctor/DoctorDetail';
+import Appointment from './pages/Appointment';
 
 function App() {
 
@@ -23,12 +23,8 @@ function App() {
         <Route path='/admin' element={<Admin />} />
         <Route path='/contact' element={<Contact />} />
         <Route path='/about' element={<About />} />
-        <Route path='/doctors' element={<Doctors />} >
-          <Route
-            path=':idDoctor'
-            element={<DoctorDetail />}
-          />
-        </Route>
+        <Route path='/doctors' element={<Doctors />} />
+        <Route path='/appointment' element={<Appointment />} />
         <Route path='/timetable' element={<TimeTable />} />
         <Route path='/blog' element={<BlogItem />}>
           <Route

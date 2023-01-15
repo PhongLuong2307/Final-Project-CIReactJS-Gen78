@@ -138,8 +138,8 @@
 }
 
 .message-login {
-    text-decoration: underline;
-    color: #0384ce;
+    text-decoration: underline !important;
+    color: #0384ce !important;
 }
 
 .message-login:hover {
@@ -186,6 +186,10 @@
 }
 
 @media screen and (max-width: 500px) {
+    .blogSite-container {
+        margin-top: -5px;
+    }
+
     .blog-container {
         padding: 0px 10px 30px;
     }

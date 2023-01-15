@@ -77,7 +77,7 @@ const SideBar = () => {
                                                         "accordion-collapse collapse"
                                                     )
                                                 }
-                                                aria-labelledby={`heading${index}`}
+                                                // aria-labelledby={`heading${index}`}
                                                 data-bs-parent="#accordionExample"
                                             >
                                                 <div class="accordion-body p-0 p-2 pt-4 pb-3">
@@ -125,7 +125,15 @@ const SideBar = () => {
                             <div className='sideBar-contactIcon'>
                                 <i class="fa-solid fa-list"></i>
                             </div>
-                            <p>Or <Link style={{ textDecoration: 'none' }}><span className='sideBar-contact_form'>fill in the form</span></Link> on our appoinment page</p>
+                            <p>Or
+                                <Link
+                                to='/appointment'
+                                    style={{ textDecoration: 'none' }}
+                                >
+                                    <span className='sideBar-contact_form'> fill in the form </span>
+                                </Link>
+                                on our appoinment page
+                            </p>
                         </li>
                     </ul>
                 </div>

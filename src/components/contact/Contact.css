@@ -1,5 +1,6 @@
 .contactSite-container {
     background-color: #F8F8F8;
+    animation: opacity 1s ease;
 }
 
 .contact-container {
