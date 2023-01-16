@@ -13,12 +13,11 @@ const useGetUsers = () => {
                 })
                 .then((users) => {
                     setUsers(users);
-                    
                 })
         }
 
         handleFetchUsers();
-    }, users)
+    })
 
     return users;
 

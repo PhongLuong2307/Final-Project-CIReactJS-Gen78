@@ -3,7 +3,7 @@ import './Admin.css';
 import '../Appointment/Step3.css'
 
 const AppointmentsManager = () => {
-    const [allAppointments, setAppointments] = useState([]);
+    const [allAppointments, setAllAppointments] = useState([]);
 
     const [serviceType, setServiceType] = useState('');
 
@@ -30,16 +30,16 @@ const AppointmentsManager = () => {
                     return response.json();
                 })
                 .then((data) => {
-                    setAppointments(data);
+                    setAllAppointments(data);
                 });
         };
 
         handleFetchAllAppointments();
-    }, [allAppointments]);
+    });
 
     const handleSeeFullInfo = (id) => {
         fetch(
-            'https://63c2875ee3abfa59bdae7af7.mockapi.io/api/v1/medicenter-appointment/' + id,
+            'https://63c2875ee3abfa59bdae7af7.mockapi.io/api/v1/medicenter-appointment/' + id
         )
         .then((response) => {
             return response.json();
@@ -61,9 +61,28 @@ const AppointmentsManager = () => {
         addDoctorContainer.classList.add("toggle-display");
     }
 
-    // const handleDeleteAppointment = () => {
+    const handleDeleteAppointment = (id) => {
+        fetch('https://63c2875ee3abfa59bdae7af7.mockapi.io/api/v1/medicenter-appointment/' + id, {
+            method: 'DELETE',
+        })
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            setAllAppointments(data);
 
-    // }
+            setServiceType('');
+            setAvailableDoctor('');
+            setAppointmentFullTime('');
+            setFacility('');
+            setDepartment('');
+            setCustomName('');
+            setCustomBirthday('');
+            setCustomPhoneNumber('');
+            setCustomGender('');
+            setCustomReason('');
+        })
+    }
 
     const toggleForm = () => {
         const addDoctorContainer = document.getElementById('appointments-info');
@@ -191,7 +210,7 @@ const AppointmentsManager = () => {
                                                             More Info
                                                         </button>
                                                         <button
-                                                            // onClick={() => { handleDeleteDoctor(doctor.id) }}
+                                                            onClick={() => { handleDeleteAppointment(appointment.id) }}
                                                             className='actionBtn deleteBtn'
                                                         >
                                                             Done

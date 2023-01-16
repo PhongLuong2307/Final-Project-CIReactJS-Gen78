@@ -113,6 +113,7 @@ const Login = () => {
                         localStorage.setItem('isLogin', true);
                         localStorage.setItem('role', `${usersList[i].role}`);
                         localStorage.setItem('avatar', `${usersList[i].avatar}`);
+                        localStorage.setItem('phoneNumber', `${usersList[i].phoneNumber}`)
 
                         navigate('/');
                     } else if (usersList[i].role === 'admin') {

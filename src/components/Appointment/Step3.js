@@ -15,7 +15,7 @@ const Step3 = (props) => {
     customBirthday,
     customGender,
     customPhoneNumber,
-    customReason
+    customReason,
   } = props;
 
   const handlePreviousStep = () => {

@@ -29,6 +29,7 @@ const NavComponent = () => {
         localStorage.removeItem('username');
         localStorage.removeItem('role');
         localStorage.removeItem('avatar');
+        localStorage.removeItem('phoneNumber');
         localStorage.setItem('isLogin', false);
 
         navigate('/');

@@ -3,6 +3,7 @@ import FeatureItem from './FeatureItem';
 import HomeNews from './HomeNews';
 import SideBar from '../../layout/SideBar';
 import useGetBlogs from '../../hooks/useGetBlogs';
+import { Link } from 'react-router-dom';
 
 const HomeBody = () => {
   const featureImgSrc = [
@@ -41,7 +42,9 @@ const HomeBody = () => {
               <p>Fees are an estimate only and may be more depending on your situation</p>
             </div>
             <div>
-              <button className='announcement-btn'>Make An Appointment</button>
+              <Link to='/appointment'>
+                <button className='announcement-btn'>Make An Appointment</button>
+              </Link>
             </div>
           </div>
 
