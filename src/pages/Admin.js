@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "../components/Admin/Admin.css"
 import BlogsManager from '../components/Admin/BlogsManager';
 import DoctorsManager from '../components/Admin/DoctorsManager';
+import AppointmentsManager from '../components/Admin/AppointmentsManager';
 
 const Admin = () => {
   const navigate = useNavigate();
@@ -19,6 +20,7 @@ const Admin = () => {
     <React.Fragment>
       <BlogsManager />
       <DoctorsManager />
+      <AppointmentsManager />
     </React.Fragment>
   )
 }

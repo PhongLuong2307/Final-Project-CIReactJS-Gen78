@@ -285,3 +285,14 @@ textarea.doctor-input {
 .doctorID-td {
     text-align: center;
 }
+
+
+.admin-apppoiment-info {
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+}
+
+.admin-info-list>h4 {
+    font-size: 30px;
+}

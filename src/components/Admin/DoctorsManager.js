@@ -113,8 +113,6 @@ const DoctorsManger = () => {
 
     const addDoctorContainer = document.getElementById('addDoctor-form');
     addDoctorContainer.classList.add("toggle-display");
-
-    console.log(id);
   }
 
   const handleUpdateDoctor = (id) => {

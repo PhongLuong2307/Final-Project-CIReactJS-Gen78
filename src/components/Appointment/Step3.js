@@ -38,6 +38,7 @@ const Step3 = (props) => {
           phoneNumber: customPhoneNumber,
           reason: customReason,
           appointmentTime: appointmentTime,
+          appointmentDate: appointmentDate,
           location: facility,
           department: department,
           doctor: availableDoctor,
@@ -106,7 +107,7 @@ const Step3 = (props) => {
 
           <div className='step-right'>
             <div className='info-list'>
-              <h4>Service</h4>
+              <h4>Customer</h4>
               <div className='line apnt-line'></div>
               <div className='info-item'>
                 <div className='info-key'>Customer</div>
