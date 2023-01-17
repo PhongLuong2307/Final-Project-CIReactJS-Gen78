@@ -149,6 +149,7 @@ const Step1 = (props) => {
                                         className='select-tag'
                                         id='facility'
                                     >
+                                        <option></option>
                                         {
                                             optionDoctor.map((doctor) => {
                                                 return <option>{doctor.name}</option>
