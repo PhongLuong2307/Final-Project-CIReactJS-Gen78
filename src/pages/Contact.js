@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import "../components/contact/Contact.css";
-import ContactForm from '../components/contact/ContactForm';
-import ContactSideBar from '../components/contact/ContactSideBar';
+import "../components/Contact/Contact.css";
+import ContactSideBar from '../components/Contact/ContactSideBar';
+import ContactForm from '../components/Contact/ContactForm';
 
 const Contact = () => {
     return (
