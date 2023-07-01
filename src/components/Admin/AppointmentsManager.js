@@ -10,15 +10,15 @@ const AppointmentsManager = () => {
     const [facility, setFacility] = useState('');
     const [department, setDepartment] = useState('');
     const [availableDoctor, setAvailableDoctor] = useState('');
-    const [appointmentDate, setAppointmentDate] = useState('');
-    const [appointmentTime, setAppointmentTime] = useState('');
+    // const [appointmentDate, setAppointmentDate] = useState('');
+    // const [appointmentTime, setAppointmentTime] = useState('');
     const [appointmentFullTime, setAppointmentFullTime] = useState('');
 
     const [customName, setCustomName] = useState('');
     const [customGender, setCustomGender] = useState('');
     const [customBirthday, setCustomBirthday] = useState('');
     const [customPhoneNumber, setCustomPhoneNumber] = useState('');
-    const [customEmail, setCustomEmail] = useState('');
+    // const [customEmail, setCustomEmail] = useState('');
     const [customReason, setCustomReason] = useState('');
 
     useEffect(() => {
